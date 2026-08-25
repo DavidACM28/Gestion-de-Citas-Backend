@@ -1,0 +1,6 @@
+@Gestion.Citas.API_HostAddress = http://localhost:5217
+
+GET {{Gestion.Citas.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

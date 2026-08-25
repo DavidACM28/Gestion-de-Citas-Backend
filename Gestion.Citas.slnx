@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/01. deploy/" />
+  <Folder Name="/02. src/" />
+  <Folder Name="/02. src/01. Presentation/">
+    <Project Path="Gestion.Citas.API/Gestion.Citas.API.csproj" />
+  </Folder>
+  <Folder Name="/02. src/02. Core/">
+    <Project Path="Gestion.Citas.Business/Gestion.Citas.Business.csproj" />
+  </Folder>
+  <Folder Name="/02. src/03. Repositories/">
+    <Project Path="Gestion.Citas.Repositories/Gestion.Citas.Repositories.csproj" />
+  </Folder>
+  <Folder Name="/02. src/04. Infraestructure/" />
+  <Folder Name="/02. src/05. Common/" />
+</Solution>
