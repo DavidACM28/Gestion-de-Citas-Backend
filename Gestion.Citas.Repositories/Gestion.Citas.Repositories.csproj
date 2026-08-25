@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Gestion.Citas.Common\Gestion.Citas.Common.csproj" />
     <ProjectReference Include="..\Gestion.Citas.DataAccess\Gestion.Citas.DataAccess.csproj" />
   </ItemGroup>
 

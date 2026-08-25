@@ -724,6 +724,16 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Gestion.Citas.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Gestion.Citas.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Gestion.Citas.Common.dll": {}
+        }
+      },
       "Gestion.Citas.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1736,6 +1746,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Gestion.Citas.Common/1.0.0": {
+      "type": "project",
+      "path": "../Gestion.Citas.Common/Gestion.Citas.Common.csproj",
+      "msbuildProject": "../Gestion.Citas.Common/Gestion.Citas.Common.csproj"
+    },
     "Gestion.Citas.DataAccess/1.0.0": {
       "type": "project",
       "path": "../Gestion.Citas.DataAccess/Gestion.Citas.DataAccess.csproj",
@@ -1744,6 +1759,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Gestion.Citas.Common >= 1.0.0",
       "Gestion.Citas.DataAccess >= 1.0.0"
     ]
   },
@@ -1780,6 +1796,9 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
+            "C:\\Users\\USUARIO\\Desktop\\Gestion.Citas\\Gestion.Citas.Common\\Gestion.Citas.Common.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\Desktop\\Gestion.Citas\\Gestion.Citas.Common\\Gestion.Citas.Common.csproj"
+            },
             "C:\\Users\\USUARIO\\Desktop\\Gestion.Citas\\Gestion.Citas.DataAccess\\Gestion.Citas.DataAccess.csproj": {
               "projectPath": "C:\\Users\\USUARIO\\Desktop\\Gestion.Citas\\Gestion.Citas.DataAccess\\Gestion.Citas.DataAccess.csproj"
             }
