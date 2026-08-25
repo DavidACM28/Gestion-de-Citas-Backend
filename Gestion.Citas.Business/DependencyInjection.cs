@@ -16,6 +16,9 @@ namespace Gestion.Citas.Business
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ISpecialtyService, SpecialtyService>();
+            services.AddScoped<IDoctorService, DoctorService>();
+            services.AddScoped<IPatientService, PatientService>();
             return services;
         }
     }

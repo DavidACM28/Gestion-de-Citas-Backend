@@ -34,6 +34,181 @@
     "Summary": "Autentica y devuelve el JWT (HS250, 60 min)"
   },
   {
+    "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_0",
+    "RelativePath": "api/doctors/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.Doctor.CreateDoctorRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Doctor.CreateDoctorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Doctors"
+    ],
+    "EndpointName": "CreateDoctor",
+    "Summary": "Crea un doctor"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.PatientEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPatientEndpoints\u003Eb__0_0",
+    "RelativePath": "api/patients/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.Patient.CreatePatientRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Patient.CreatePatientResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Patients"
+    ],
+    "EndpointName": "CreatePatient",
+    "Summary": "Crea un paciente"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.SpecialtyEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapSpecialtyEndpoints\u003Eb__0_0",
+    "RelativePath": "api/specialties/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.Specialty.CreateSpecialtyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Specialty.CreateSpecialtyResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Specialties"
+    ],
+    "EndpointName": "CreateSpecialty",
+    "Summary": "Crea una especialidad medica"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.SpecialtyEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapSpecialtyEndpoints\u003Eb__0_2",
+    "RelativePath": "api/specialties/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Gestion.Citas.Business.DTO.Response.Specialty.GetSpecialtyResponse, Gestion.Citas.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Specialties"
+    ],
+    "EndpointName": "GetListSpecialties",
+    "Summary": "Listado de especialidades"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.SpecialtyEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapSpecialtyEndpoints\u003Eb__0_3",
+    "RelativePath": "api/specialties/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Specialty.GetSpecialtyResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Specialties"
+    ],
+    "EndpointName": "GetSpecialtyById",
+    "Summary": "Detalle de una especialidad"
+  },
+  {
     "ContainingType": "Gestion.Citas.API.Endpoints.UserEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEndpoints\u003Eb__0_0",
     "RelativePath": "api/users/",

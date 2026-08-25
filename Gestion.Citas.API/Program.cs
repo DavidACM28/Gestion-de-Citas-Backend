@@ -48,7 +48,10 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
-app.MapGroup("api/users").MapUserEndpoints().WithTags("Users");
 app.MapGroup("api/auth").MapAuthEndpoints().WithTags("Authtentication");
+app.MapGroup("api/users").MapUserEndpoints().WithTags("Users");
+app.MapGroup("api/specialties").MapSpecialtyEndpoints().WithTags("Specialties");
+app.MapGroup("api/doctors").MapDoctorEndpoints().WithTags("Doctors");
+app.MapGroup("api/patients").MapPatientEndpoints().WithTags("Patients");
 
 app.Run();
