@@ -1,0 +1,13 @@
+ services:
+  sqlserver_appointments_minimalapi:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver_appointments_minimalapi
+    restart: always
+    environment:
+      MSSQL_SA_PASSWORD: "Password2026"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "express"
+    ports:
+      - 1501:1433
+    volumes:
+      - C:\Users\USUARIO\Documents\Docker\Volumenes\minimal_api:/var/opt/mssql/data

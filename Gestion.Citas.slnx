@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/01. deploy/" />
+  <Folder Name="/01. deploy/">
+    <File Path="docker-compose.yml" />
+  </Folder>
   <Folder Name="/02. src/" />
   <Folder Name="/02. src/01. Presentation/">
     <Project Path="Gestion.Citas.API/Gestion.Citas.API.csproj" />
@@ -10,6 +12,10 @@
   <Folder Name="/02. src/03. Repositories/">
     <Project Path="Gestion.Citas.Repositories/Gestion.Citas.Repositories.csproj" />
   </Folder>
-  <Folder Name="/02. src/04. Infraestructure/" />
-  <Folder Name="/02. src/05. Common/" />
+  <Folder Name="/02. src/04. Infraestructure/">
+    <Project Path="Gestion.Citas.DataAccess/Gestion.Citas.DataAccess.csproj" Id="8bff3dd3-a9f8-443b-8026-3e619dd99e91" />
+  </Folder>
+  <Folder Name="/02. src/05. Common/">
+    <Project Path="Gestion.Citas.Common/Gestion.Citas.Common.csproj" Id="58e6eb45-ceab-4417-8616-2f7d91f39dd3" />
+  </Folder>
 </Solution>

@@ -1,0 +1,12 @@
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\bin\Debug\net10.0\Gestion.Citas.Repositories.deps.json
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\bin\Debug\net10.0\Gestion.Citas.Repositories.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\bin\Debug\net10.0\Gestion.Citas.Repositories.pdb
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\Gestion.Citas.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\Gestion.Citas.Repositories.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\Gestion.Citas.Repositories.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\Gestion.Citas.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\Gestion.Citas.Repositories.sourcelink.json
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\Gestion.Citas.Repositories.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\refint\Gestion.Citas.Repositories.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\Gestion.Citas.Repositories.pdb
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Repositories\obj\Debug\net10.0\ref\Gestion.Citas.Repositories.dll

@@ -1,0 +1,12 @@
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.Business.deps.json
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.Business.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.Business.pdb
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.sourcelink.json
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\refint\Gestion.Citas.Business.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.pdb
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\ref\Gestion.Citas.Business.dll
