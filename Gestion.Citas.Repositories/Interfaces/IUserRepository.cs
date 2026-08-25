@@ -7,5 +7,6 @@ namespace Gestion.Citas.Repositories.Interfaces
 {
     public interface IUserRepository : IBaseRepository<User>
     {
+        Task<bool> UserExistsAsync(string username);
     }
 }

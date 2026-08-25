@@ -1,0 +1,70 @@
+[
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AuthEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAuthEndpoints\u003Eb__0_0",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.Auth.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Auth.LoginResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      }
+    ],
+    "Tags": [
+      "Authtentication"
+    ],
+    "EndpointName": "Login",
+    "Summary": "Autentica y devuelve el JWT (HS250, 60 min)"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.UserEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEndpoints\u003Eb__0_0",
+    "RelativePath": "api/users/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.User.CreateUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Common.Helpers.Result",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "User Registration",
+    "Summary": "Registrar un nuevo usuario de tipo Admin o Receptionitst"
+  }
+]

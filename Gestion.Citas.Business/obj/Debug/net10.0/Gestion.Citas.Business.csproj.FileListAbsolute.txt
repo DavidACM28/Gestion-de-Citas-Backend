@@ -10,3 +10,11 @@ C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\
 C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\refint\Gestion.Citas.Business.dll
 C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.pdb
 C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\ref\Gestion.Citas.Business.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.Common.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.DataAccess.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.Repositories.dll
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.Repositories.pdb
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.Common.pdb
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\bin\Debug\net10.0\Gestion.Citas.DataAccess.pdb
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion.Citas.Business.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Desktop\Gestion.Citas\Gestion.Citas.Business\obj\Debug\net10.0\Gestion..F6CAC156.Up2Date

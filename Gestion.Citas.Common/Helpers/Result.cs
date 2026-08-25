@@ -22,7 +22,7 @@ namespace Gestion.Citas.Common.Helpers
         public static Result Failure(string error) => new(false, error);
         public static Result Failure(IEnumerable<string> errors) => new(false, null, errors);
 
-        public static Result<T> Success<T>(T value) => new(value, true, null);
+        public static Result<T> Success<T>(T value, string message = "Proceso exitoso") => new(value, true, message);
         public static Result<T> Failure<T>(string error) => new(default, false, error);
         public static Result<T> Failure<T>(IEnumerable<string> errors) => new(default, false, null, errors);
 

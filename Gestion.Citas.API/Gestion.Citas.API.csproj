@@ -11,4 +11,9 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Gestion.Citas.Business\Gestion.Citas.Business.csproj" />
+    <ProjectReference Include="..\Gestion.Citas.Common\Gestion.Citas.Common.csproj" />
+  </ItemGroup>
+
 </Project>
