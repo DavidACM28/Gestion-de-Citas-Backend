@@ -63,5 +63,14 @@ namespace Gestion.Citas.Business.Implementations
 
             return Result.Success<CreateUserResponse>(response);
         }
+
+        public async Task<Result<GetUserResponse>> GetMeAsync(int userId)
+        {
+            var user = await _userRepository.GetByIdAsync(userId);
+            if (user is null)
+                return Result.Failure<GetUserResponse>("Usuario no encontrado");
+
+            return Result.Success(user.Adapt<GetUserResponse>());
+        }
     }
 }

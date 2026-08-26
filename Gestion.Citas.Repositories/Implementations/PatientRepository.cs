@@ -2,6 +2,7 @@
 using Gestion.Citas.DataAccess;
 using Gestion.Citas.DataAccess.Entities;
 using Gestion.Citas.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,6 +32,16 @@ namespace Gestion.Citas.Repositories.Implementations
                     return (Result<Patient>)Result.Failure($"Error al crear paciente y usuario: {ex.Message}");
                 }
             }
+        }
+
+        public async Task<Result<Patient>> GetByUserIdAsync(int userId)
+        {
+            var patient = await _context.Set<Patient>()
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(p => p.Active && p.UserId == userId);
+            if (patient is null)
+                return (Result<Patient>)Result.Failure("Paciente no encontrado");
+            return Result.Success(patient);
         }
     }
 }

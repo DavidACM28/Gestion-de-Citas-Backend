@@ -68,6 +68,39 @@
     "Summary": "Crea un doctor"
   },
   {
+    "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_2",
+    "RelativePath": "api/doctors/me",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Doctor.CreateDoctorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Doctors"
+    ],
+    "EndpointName": "GetCurrentDoctor",
+    "Summary": "Obtiene la informaci\u00F3n del doctor autenticado"
+  },
+  {
     "ContainingType": "Gestion.Citas.API.Endpoints.PatientEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapPatientEndpoints\u003Eb__0_0",
     "RelativePath": "api/patients/",
@@ -100,6 +133,39 @@
     ],
     "EndpointName": "CreatePatient",
     "Summary": "Crea un paciente"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.PatientEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPatientEndpoints\u003Eb__0_1",
+    "RelativePath": "api/patients/me",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Patient.GetPatientResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Patients"
+    ],
+    "EndpointName": "GetCurrentPatient",
+    "Summary": "Obtiene la informaci\u00F3n del paciente autenticado"
   },
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.SpecialtyEndpoints\u002B\u003C\u003Ec",
@@ -241,5 +307,38 @@
     ],
     "EndpointName": "User Registration",
     "Summary": "Registrar un nuevo usuario de tipo Admin o Receptionitst"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.UserEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEndpoints\u003Eb__0_2",
+    "RelativePath": "api/users/me",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Common.Helpers.Result",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "GetCurrentUser",
+    "Summary": "Obtiene la informaci\u00F3n del usuario autenticado"
   }
 ]

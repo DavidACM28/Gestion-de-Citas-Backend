@@ -9,5 +9,6 @@ namespace Gestion.Citas.Repositories.Interfaces
     public interface IPatientRepository : IBaseRepository<Patient>
     {
         Task<Result<Patient>> CreateWithUserAsync(Patient patient, User user);
+        Task<Result<Patient>> GetByUserIdAsync(int userId);
     }
 }

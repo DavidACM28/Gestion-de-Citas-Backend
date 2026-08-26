@@ -98,5 +98,25 @@ namespace Gestion.Citas.Business.Implementations
             };
             return Result.Success(response);
         }
+
+        public async Task<Result<GetPatientResponse>> GetMeAsync(int userId)
+        {
+            var result = await _patientRepository.GetByUserIdAsync(userId);
+            if (result.IsFailure || result.Value is null || result.Value.User is null)
+                return Result.Failure<GetPatientResponse>("Paciente no encontrado");
+
+            return Result.Success(new GetPatientResponse
+            {
+                Id = result.Value.Id,
+                DocumentType = result.Value.DocumentType,
+                DocumentNumber = result.Value.DocumentNumber,
+                FirstName = result.Value.FirstName,
+                LastName = result.Value.LastName,
+                DateOfBirth = result.Value.DateOfBirth,
+                PhoneNumber = result.Value.PhoneNumber,
+                Address = result.Value.Address,
+                User = result.Value.User.Adapt<GetUserResponse>()
+            });
+        }
     }
 }
