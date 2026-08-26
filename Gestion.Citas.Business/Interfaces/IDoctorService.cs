@@ -8,5 +8,7 @@ namespace Gestion.Citas.Business.Interfaces
     {
         Task<Result> RegisterAsync(CreateDoctorRequest request);
         Task<Result<GetDoctorResponse>> GetMeAsync(int userId);
+        Task<Result<List<GetDoctorResponse>>> GetByFilters(string specialty = "", string name = "", int pageNumber = 1, int pageSize = 10, string role = "");
+        Task<Result<GetDoctorResponse>> GetByIdAsync(int id);
     }
 }

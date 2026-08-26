@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gestion.Citas.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5bb6c7891f22c0583a5f3145418f30a28ccb3e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6d449d05b2c6b16af6fc8bd99c715f3ba41bc90")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gestion.Citas.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gestion.Citas.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

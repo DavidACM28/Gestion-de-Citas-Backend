@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gestion.Citas.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4147cce960ac4d73554432e22a794452bad9a9ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6d449d05b2c6b16af6fc8bd99c715f3ba41bc90")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gestion.Citas.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gestion.Citas.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

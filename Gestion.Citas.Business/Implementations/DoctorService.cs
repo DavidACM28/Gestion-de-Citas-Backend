@@ -96,6 +96,44 @@ namespace Gestion.Citas.Business.Implementations
             return Result.Success(response);
         }
 
+        public async Task<Result<GetDoctorResponse>> GetByIdAsync(int id)
+        {
+            var result = await _doctorRepository.GetByIdWithUserAndSpecialtyAsync(id);
+            if (result.IsFailure || result.Value is null)
+                return Result.Failure<GetDoctorResponse>("No se encontraron resutlados");
+            return Result.Success(new GetDoctorResponse
+            {
+                Id = result.Value.Id,
+                FirstName = result.Value.FirstName,
+                LastName = result.Value.LastName,
+                PhoneNumber = result.Value.PhoneNumber,
+                Specialty = result.Value.Specialty!.Adapt<GetSpecialtyResponse>(),
+                User = result.Value.User!.Adapt<GetUserResponse>()
+            });
+        }
+        
+        public async Task<Result<List<GetDoctorResponse>>> GetByFilters(string specialty = "", string name = "", int pageNumber = 1, int pageSize = 10, string role = "")
+        {
+            var result = await _doctorRepository.GetByFiltersAsync(specialty, name, pageNumber, pageSize, role);
+            if (result.IsFailure || result.Value!.Count <= 0)
+                return Result.Failure<List<GetDoctorResponse>>(result.Message!);
+
+            List<GetDoctorResponse> response = [];
+            foreach(var doctor in result.Value)
+            {
+                response.Add(new GetDoctorResponse
+                {
+                    Id = doctor.Id,
+                    FirstName = doctor.FirstName,
+                    LastName = doctor.LastName,
+                    PhoneNumber = doctor.PhoneNumber,
+                    Specialty = doctor.Specialty!.Adapt<GetSpecialtyResponse>(),
+                    User = doctor.User!.Adapt<GetUserResponse>()
+                });
+            }
+            return Result.Success(response);
+        }
+
         public async Task<Result<GetDoctorResponse>> GetMeAsync(int userId)
         {
             var result = await _doctorRepository.GetByUserIdAsync(userId);

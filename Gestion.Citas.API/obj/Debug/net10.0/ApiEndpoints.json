@@ -70,6 +70,89 @@
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapDoctorEndpoints\u003Eb__0_2",
+    "RelativePath": "api/doctors/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "specialty",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Doctor.GetDoctorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Doctors"
+    ],
+    "EndpointName": "GetDoctorsByFilters",
+    "Summary": "Obtiene la informaci\u00F3n de doctores por filtros"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_4",
+    "RelativePath": "api/doctors/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Doctor.GetDoctorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Doctors"
+    ],
+    "EndpointName": "GetDoctorById",
+    "Summary": "Obtiene la informaci\u00F3n de doctores por Id"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_6",
     "RelativePath": "api/doctors/me",
     "HttpMethod": "GET",
     "IsController": false,
@@ -77,7 +160,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "Gestion.Citas.Business.DTO.Response.Doctor.CreateDoctorResponse",
+        "Type": "Gestion.Citas.Business.DTO.Response.Doctor.GetDoctorResponse",
         "MediaTypes": [
           "application/json"
         ],

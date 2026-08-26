@@ -24,6 +24,35 @@ namespace Gestion.Citas.API.Endpoints
                 .Produces<CreateDoctorResponse>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
 
+            group.MapGet("/", async (string specialty, string name, int pageNumber, int pageSize, ClaimsPrincipal currentUser, IDoctorService service) =>
+            {
+                var role = currentUser.FindFirstValue(ClaimTypes.Role);
+                var result = await service.GetByFilters(specialty, name, pageNumber, pageSize, role!);
+                if(result.IsFailure || result.Value == null || result.Value.Count <= 0)
+                {
+                    return Results.NotFound(result);
+                }
+                return Results.Ok(result);
+            })
+                .WithName("GetDoctorsByFilters")
+                .WithSummary("Obtiene la información de doctores por filtros")
+                .RequireAuthorization(d => d.RequireRole(Roles.Doctor, Roles.Admin, Roles.Patient, Roles.Receptionist))
+                .Produces<GetDoctorResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
+            group.MapGet("/{id:int}",  async (int id, IDoctorService service) =>
+            {
+                var result = await service.GetByIdAsync(id);
+                if(result.IsFailure || result.Value is null)
+                    return Results.NotFound(result);
+                return Results.Ok(result);
+            })
+                .WithName("GetDoctorById")
+                .WithSummary("Obtiene la información de doctores por Id")
+                .RequireAuthorization(d => d.RequireRole(Roles.Admin, Roles.Receptionist))
+                .Produces<GetDoctorResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
             group.MapGet("/me", async (ClaimsPrincipal currentUser, IDoctorService service) =>
             {
                 var userIdClaim = currentUser.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -38,7 +67,7 @@ namespace Gestion.Citas.API.Endpoints
                 .WithName("GetCurrentDoctor")
                 .WithSummary("Obtiene la información del doctor autenticado")
                 .RequireAuthorization(d => d.RequireRole(Roles.Doctor, Roles.Admin))
-                .Produces<CreateDoctorResponse>(StatusCodes.Status200OK)
+                .Produces<GetDoctorResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status404NotFound);
 
