@@ -3,9 +3,6 @@ using Gestion.Citas.DataAccess;
 using Gestion.Citas.DataAccess.Entities;
 using Gestion.Citas.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Gestion.Citas.Repositories.Implementations
 {
@@ -40,7 +37,17 @@ namespace Gestion.Citas.Repositories.Implementations
                 .Include(p => p.User)
                 .FirstOrDefaultAsync(p => p.Active && p.UserId == userId);
             if (patient is null)
-                return (Result<Patient>)Result.Failure("Paciente no encontrado");
+                return Result.Failure<Patient>("Paciente no encontrado");
+            return Result.Success(patient);
+        }
+
+        public async Task<Result<Patient>> GetWithUserByIdAsync(int id)
+        {
+            var patient = await _context.Set<Patient>()
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(p => p.Id == id);
+            if (patient is null)
+                return Result.Failure<Patient>("Paciente no encontrado");
             return Result.Success(patient);
         }
     }

@@ -137,6 +137,68 @@
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.PatientEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapPatientEndpoints\u003Eb__0_1",
+    "RelativePath": "api/patients/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Common.Helpers.Result",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Patients"
+    ],
+    "EndpointName": "GetListPatients",
+    "Summary": "Listado de pacientes"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.PatientEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPatientEndpoints\u003Eb__0_3",
+    "RelativePath": "api/patients/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Common.Helpers.Result",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Patients"
+    ],
+    "EndpointName": "GetPatientById",
+    "Summary": "Paciente por id"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.PatientEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPatientEndpoints\u003Eb__0_5",
     "RelativePath": "api/patients/me",
     "HttpMethod": "GET",
     "IsController": false,

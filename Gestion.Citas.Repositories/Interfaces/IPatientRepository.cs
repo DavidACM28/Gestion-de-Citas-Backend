@@ -10,5 +10,6 @@ namespace Gestion.Citas.Repositories.Interfaces
     {
         Task<Result<Patient>> CreateWithUserAsync(Patient patient, User user);
         Task<Result<Patient>> GetByUserIdAsync(int userId);
+        Task<Result<Patient>> GetWithUserByIdAsync(int id);
     }
 }

@@ -23,6 +23,32 @@ namespace Gestion.Citas.API.Endpoints
                 .Produces<CreatePatientResponse>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
 
+            group.MapGet("/", async (IPatientService service) =>
+            {
+                var result = await service.ListAsync();
+                if(result.IsFailure || result.Value is null)
+                    return Results.NotFound(result);
+                return Results.Ok(result);
+            })
+                .WithName("GetListPatients")
+                .WithSummary("Listado de pacientes")
+                .RequireAuthorization(p => p.RequireRole(Roles.Admin, Roles.Receptionist))
+                .Produces<Result>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
+            group.MapGet("/{id:int}", async (int id, IPatientService service) =>
+            {
+                var result = await service.GetByIdAsync(id);
+                if (result.IsFailure || result.Value is null)
+                    return Results.NotFound(result);
+                return Results.Ok(result);
+            })
+                .WithName("GetPatientById")
+                .WithSummary("Paciente por id")
+                .RequireAuthorization(p => p.RequireRole(Roles.Admin, Roles.Receptionist))
+                .Produces<Result>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
             group.MapGet("/me", async (ClaimsPrincipal currentUser, IPatientService service) =>
             {
                 var userIdClaim = currentUser.FindFirstValue(ClaimTypes.NameIdentifier);

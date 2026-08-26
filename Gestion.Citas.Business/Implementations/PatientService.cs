@@ -5,6 +5,7 @@ using Gestion.Citas.Business.DTO.Response.User;
 using Gestion.Citas.Business.Interfaces;
 using Gestion.Citas.Common.Helpers;
 using Gestion.Citas.DataAccess.Entities;
+using Gestion.Citas.Repositories.Implementations;
 using Gestion.Citas.Repositories.Interfaces;
 using Mapster;
 
@@ -97,6 +98,38 @@ namespace Gestion.Citas.Business.Implementations
                 }
             };
             return Result.Success(response);
+        }
+
+        public async Task<Result<GetPatientResponse>> GetByIdAsync(int id)
+        {
+            var patient = await _patientRepository.GetWithUserByIdAsync(id);
+            if (patient is null || patient.Value is null)
+                return Result.Failure<GetPatientResponse>("Paciente no encontrado");
+            return Result.Success(patient.Value.Adapt<GetPatientResponse>());
+        }
+
+        public async Task<Result<List<GetPatientResponse>>> ListAsync(int pageNumber = 1, int pageSize = 10)
+        {
+            var result = await _patientRepository.ListAsync(
+                predicate: p => p.Active,
+                selector: p => new GetPatientResponse
+                {
+                    Id = p.Id,
+                    User = p.User!.Adapt<GetUserResponse>(),
+                    Address = p.Address,
+                    DateOfBirth = p.DateOfBirth,
+                    DocumentNumber = p.DocumentNumber,
+                    DocumentType = p.DocumentType,
+                    FirstName = p.FirstName,
+                    LastName = p.LastName,
+                    PhoneNumber = p.PhoneNumber
+                },
+                pageNumber: pageNumber,
+                pageSize: pageSize
+                );
+            if (result.Result is null)
+                return Result.Failure<List<GetPatientResponse>>("No se encontraron resultados");
+            return Result.Success(result.Result.ToList());
         }
 
         public async Task<Result<GetPatientResponse>> GetMeAsync(int userId)
