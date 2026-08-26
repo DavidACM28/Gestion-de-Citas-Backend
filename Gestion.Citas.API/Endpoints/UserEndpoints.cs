@@ -23,6 +23,32 @@ namespace Gestion.Citas.API.Endpoints
                 .Produces<Result>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
 
+            group.MapGet("/", async (IUserService service) =>
+            {
+                var result = await service.ListAsync();
+                if(result.IsFailure || result.Value is null)
+                    return Results.NotFound(result);
+                return Results.Ok(result);
+            })
+                .WithName("Get List Users")
+                .WithSummary("Listado de usuarios")
+                .RequireAuthorization(p => p.RequireRole(Roles.Admin))
+                .Produces<Result>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
+            group.MapGet("/{id:int}", async (int id, IUserService service) =>
+            {
+                var result = await service.GetByIdAsync(id);
+                if (result.IsFailure | result.Value is null)
+                    return Results.NotFound(result);
+                return Results.Ok(result);
+            })
+                .WithName("Get User by Id")
+                .WithSummary("Detalle de un usuario")
+                .RequireAuthorization(p => p.RequireRole(Roles.Admin))
+                .Produces<Result>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
             group.MapGet("/me", async (ClaimsPrincipal currentUser, IUserService service) =>
             {
                 var userIdClaim = currentUser.FindFirstValue(ClaimTypes.NameIdentifier);

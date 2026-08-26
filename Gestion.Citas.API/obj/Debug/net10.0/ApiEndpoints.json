@@ -311,6 +311,68 @@
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.UserEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEndpoints\u003Eb__0_2",
+    "RelativePath": "api/users/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Common.Helpers.Result",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "Get List Users",
+    "Summary": "Listado de usuarios"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.UserEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEndpoints\u003Eb__0_4",
+    "RelativePath": "api/users/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Common.Helpers.Result",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "Get User by Id",
+    "Summary": "Detalle de un usuario"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.UserEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEndpoints\u003Eb__0_6",
     "RelativePath": "api/users/me",
     "HttpMethod": "GET",
     "IsController": false,

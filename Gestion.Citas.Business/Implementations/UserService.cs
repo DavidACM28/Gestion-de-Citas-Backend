@@ -4,13 +4,8 @@ using Gestion.Citas.Business.DTO.Response.User;
 using Gestion.Citas.Business.Interfaces;
 using Gestion.Citas.Common.Helpers;
 using Gestion.Citas.DataAccess.Entities;
-using Gestion.Citas.Repositories.Implementations;
 using Gestion.Citas.Repositories.Interfaces;
 using Mapster;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Gestion.Citas.Business.Implementations
 {
@@ -62,6 +57,33 @@ namespace Gestion.Citas.Business.Implementations
             var response = user.Adapt<CreateUserResponse>();
 
             return Result.Success<CreateUserResponse>(response);
+        }
+
+        public async Task<Result<GetUserResponse>> GetByIdAsync(int id)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+            if (user is null)
+                return Result.Failure<GetUserResponse>("Usuario no encontrado");
+            return Result.Success(user.Adapt<GetUserResponse>());
+        }
+
+        public async Task<Result<List<GetUserResponse>>> ListAsync(int pageNumber = 1, int pageSize = 10)
+        {
+            var result = await _userRepository.ListAsync(
+                predicate: p => 1 == 1,
+                selector: p => new GetUserResponse
+                {
+                    Id = p.Id,
+                    Username = p.Username,
+                    Email = p.Email,
+                    Role = p.Role
+                },
+                pageNumber: pageNumber,
+                pageSize: pageSize
+                );
+            if (result.Result is null)
+                return Result.Failure<List<GetUserResponse>>("No se encontraron resultados");
+            return Result.Success(result.Result.ToList());
         }
 
         public async Task<Result<GetUserResponse>> GetMeAsync(int userId)

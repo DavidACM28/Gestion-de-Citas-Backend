@@ -11,5 +11,7 @@ namespace Gestion.Citas.Business.Interfaces
     {
         Task<Result> RegisterAsync(CreateUserRequest request);
         Task<Result<GetUserResponse>> GetMeAsync(int userId);
+        Task<Result<GetUserResponse>> GetByIdAsync(int id);
+        Task<Result<List<GetUserResponse>>> ListAsync(int pageNumber = 1, int pageSize = 10);
     }
 }
