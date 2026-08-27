@@ -6,11 +6,17 @@ using Gestion.Citas.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
 builder.Services.AddDbContext<AppointmentsDbContext>(p =>
 {
@@ -53,5 +59,6 @@ app.MapGroup("api/users").MapUserEndpoints().WithTags("Users");
 app.MapGroup("api/specialties").MapSpecialtyEndpoints().WithTags("Specialties");
 app.MapGroup("api/doctors").MapDoctorEndpoints().WithTags("Doctors");
 app.MapGroup("api/patients").MapPatientEndpoints().WithTags("Patients");
+app.MapGroup("api/businessHours").MapBusinessHoursEndpoints().WithTags("BusinessHours");
 
 app.Run();

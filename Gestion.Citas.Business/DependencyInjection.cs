@@ -3,9 +3,6 @@ using Gestion.Citas.Business.Interfaces;
 using Gestion.Citas.Repositories.Implementations;
 using Gestion.Citas.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Gestion.Citas.Business
 {
@@ -19,6 +16,7 @@ namespace Gestion.Citas.Business
             services.AddScoped<ISpecialtyService, SpecialtyService>();
             services.AddScoped<IDoctorService, DoctorService>();
             services.AddScoped<IPatientService, PatientService>();
+            services.AddScoped<IBusinessHoursService, BusinessHoursService>();
             return services;
         }
     }

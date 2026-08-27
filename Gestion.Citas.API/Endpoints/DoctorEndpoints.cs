@@ -1,6 +1,7 @@
 ﻿using Gestion.Citas.Business.Constants;
 using Gestion.Citas.Business.DTO.Request.Doctor;
 using Gestion.Citas.Business.DTO.Response.Doctor;
+using Gestion.Citas.Business.DTO.Response.BusinessHours;
 using Gestion.Citas.Business.Interfaces;
 using Gestion.Citas.Common.Helpers;
 using System.Security.Claims;
@@ -51,6 +52,20 @@ namespace Gestion.Citas.API.Endpoints
                 .WithSummary("Obtiene la información de doctores por Id")
                 .RequireAuthorization(d => d.RequireRole(Roles.Admin, Roles.Receptionist))
                 .Produces<GetDoctorResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
+            group.MapGet("/{doctorId:int}/business-hours", async (int doctorId, IBusinessHoursService service) =>
+            {
+                var result = await service.GetByDoctorIdAsync(doctorId);
+                if (result.IsFailure)
+                    return Results.NotFound(result);
+
+                return Results.Ok(result);
+            })
+                .WithName("GetDoctorBusinessHours")
+                .WithSummary("Obtiene los horarios de un doctor por su Id")
+                .RequireAuthorization(d => d.RequireRole(Roles.Admin, Roles.Doctor, Roles.Patient, Roles.Receptionist))
+                .Produces<List<GetBusinessHoursResponse>>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status404NotFound);
 
             group.MapGet("/me", async (ClaimsPrincipal currentUser, IDoctorService service) =>

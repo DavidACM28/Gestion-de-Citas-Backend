@@ -34,6 +34,155 @@
     "Summary": "Autentica y devuelve el JWT (HS250, 60 min)"
   },
   {
+    "ContainingType": "Gestion.Citas.API.Endpoints.BusinessHoursEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBusinessHoursEndpoints\u003Eb__0_0",
+    "RelativePath": "api/businessHours/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.BusinessHours.CreateBusinessHoursRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Doctor.CreateDoctorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "BusinessHours"
+    ],
+    "EndpointName": "CreateBusinessHours",
+    "Summary": "Crea el horario de atenci\u00F3n de un d\u00EDa"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.BusinessHoursEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBusinessHoursEndpoints\u003Eb__0_2",
+    "RelativePath": "api/businessHours/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.BusinessHours.GetBusinessHoursResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "BusinessHours"
+    ],
+    "EndpointName": "GetBusinessHoursById",
+    "Summary": "Obtiene un horario por Id"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.BusinessHoursEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBusinessHoursEndpoints\u003Eb__0_4",
+    "RelativePath": "api/businessHours/{id:int}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.BusinessHours.UpdateBusinessHoursRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.BusinessHours.GetBusinessHoursResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "BusinessHours"
+    ],
+    "EndpointName": "UpdateBusinessHours",
+    "Summary": "Edita un horario"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.BusinessHoursEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBusinessHoursEndpoints\u003Eb__0_6",
+    "RelativePath": "api/businessHours/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "BusinessHours"
+    ],
+    "EndpointName": "DeleteBusinessHours",
+    "Summary": "Desactiva un horario"
+  },
+  {
     "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapDoctorEndpoints\u003Eb__0_0",
     "RelativePath": "api/doctors/",
@@ -118,6 +267,40 @@
   },
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_6",
+    "RelativePath": "api/doctors/{doctorId:int}/business-hours",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Gestion.Citas.Business.DTO.Response.BusinessHours.GetBusinessHoursResponse, Gestion.Citas.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Doctors"
+    ],
+    "EndpointName": "GetDoctorBusinessHours",
+    "Summary": "Obtiene los horarios de un doctor por su Id"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapDoctorEndpoints\u003Eb__0_4",
     "RelativePath": "api/doctors/{id:int}",
     "HttpMethod": "GET",
@@ -152,7 +335,7 @@
   },
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
-    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_6",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_8",
     "RelativePath": "api/doctors/me",
     "HttpMethod": "GET",
     "IsController": false,

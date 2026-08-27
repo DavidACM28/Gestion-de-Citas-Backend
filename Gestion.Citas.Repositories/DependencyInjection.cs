@@ -1,4 +1,5 @@
-﻿using Gestion.Citas.Repositories.Implementations;
+﻿using Gestion.Citas.DataAccess.Entities;
+using Gestion.Citas.Repositories.Implementations;
 using Gestion.Citas.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 namespace Gestion.Citas.Repositories
@@ -11,6 +12,7 @@ namespace Gestion.Citas.Repositories
             services.AddScoped<ISpecialtyRepository, SpecialtyRepository>();
             services.AddScoped<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IBusinessHoursRepository, BusinessHoursRepository>();
             return services;
         }
     }
