@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gestion.Citas.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d55effad82f253fd1554855932bd3fd2b07d340e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe9b065e411d5a92cfe88c9563975e4883475ba6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gestion.Citas.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gestion.Citas.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

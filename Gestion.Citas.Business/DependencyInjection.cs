@@ -17,6 +17,7 @@ namespace Gestion.Citas.Business
             services.AddScoped<IDoctorService, DoctorService>();
             services.AddScoped<IPatientService, PatientService>();
             services.AddScoped<IBusinessHoursService, BusinessHoursService>();
+            services.AddScoped<IAppointmentService, AppointmentService>();
             return services;
         }
     }

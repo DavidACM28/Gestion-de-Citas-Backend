@@ -2,8 +2,8 @@
 using Gestion.Citas.Business.DTO.Request.Doctor;
 using Gestion.Citas.Business.DTO.Response.Doctor;
 using Gestion.Citas.Business.DTO.Response.BusinessHours;
+using Gestion.Citas.Business.DTO.Response.Appointment;
 using Gestion.Citas.Business.Interfaces;
-using Gestion.Citas.Common.Helpers;
 using System.Security.Claims;
 
 namespace Gestion.Citas.API.Endpoints
@@ -52,6 +52,45 @@ namespace Gestion.Citas.API.Endpoints
                 .WithSummary("Obtiene la información de doctores por Id")
                 .RequireAuthorization(d => d.RequireRole(Roles.Admin, Roles.Receptionist))
                 .Produces<GetDoctorResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
+            group.MapGet("/me/appointments", async (
+                ClaimsPrincipal currentUser,
+                IAppointmentService service,
+                DateOnly? startDate = null,
+                DateOnly? endDate = null,
+                string status = "",
+                int pageNumber = 1,
+                int pageSize = 10) =>
+            {
+                if (!int.TryParse(currentUser.FindFirstValue(ClaimTypes.NameIdentifier), out var userId))
+                    return Results.Unauthorized();
+
+                var result = await service.GetByFiltersAsync(
+                    role: Roles.Doctor,
+                    userId: userId,
+                    startDate: startDate,
+                    endDate: endDate,
+                    status: status,
+                    pageNumber: pageNumber,
+                    pageSize: pageSize);
+
+                if (result.IsFailure)
+                {
+                    if (result.Message == "La fecha de inicio de la busqueda no puede ser mayor a la fecha de fin de la busqueda" ||
+                        result.Message == "Estado de cita inválido")
+                        return Results.BadRequest(result);
+                    return Results.NotFound(result);
+                }
+
+                return Results.Ok(result);
+            })
+                .WithName("GetCurrentDoctorAppointments")
+                .WithSummary("Obtiene las citas del doctor autenticado por fecha y estado")
+                .RequireAuthorization(d => d.RequireRole(Roles.Doctor))
+                .Produces<List<GetAppointmentResponse>>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status404NotFound);
 
             group.MapGet("/{doctorId:int}/business-hours", async (int doctorId, IBusinessHoursService service) =>

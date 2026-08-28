@@ -16,7 +16,7 @@ namespace Gestion.Citas.DataAccess.Entities
         public string Status { get; set; } = string.Empty;
         public string Reason {  get; set; } = string.Empty;
         public string? Note { get; set; }
-        public required byte[] RowVersion { get; set; }
+        public byte[] RowVersion { get; set; } = Array.Empty<byte>();
         public List<AppointmentSlot> Slots { get; set; } = new();
     }
 }

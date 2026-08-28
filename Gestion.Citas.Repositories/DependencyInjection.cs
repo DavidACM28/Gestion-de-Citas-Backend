@@ -13,6 +13,8 @@ namespace Gestion.Citas.Repositories
             services.AddScoped<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<IBusinessHoursRepository, BusinessHoursRepository>();
+            services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+            services.AddScoped<IAppointmentBlockRepository, AppointmentBlockRepository>();
             return services;
         }
     }

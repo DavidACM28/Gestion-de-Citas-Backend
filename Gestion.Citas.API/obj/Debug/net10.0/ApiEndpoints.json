@@ -1,5 +1,387 @@
 [
   {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_0",
+    "RelativePath": "api/appointments/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorFirstName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "doctorLastName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "patientFirstName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "patientLastName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "specialtyName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "doctorId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "patientId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "specialtyId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Doctor.GetDoctorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Appointments"
+    ],
+    "EndpointName": "GetAppointmentsByFilters",
+    "Summary": "Obtiene la informaci\u00F3n de citas por filtros"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_2",
+    "RelativePath": "api/appointments/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.Appointment.CreateAppointmentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Appointment.CreateAppointmentResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "Appointments"
+    ],
+    "EndpointName": "CreateAppointment",
+    "Summary": "Crea una cita"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_4",
+    "RelativePath": "api/appointments/{id:int}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.Appointment.UpdateAppointmentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Appointment.UpdateAppointmentResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Appointments"
+    ],
+    "EndpointName": "UpdateAppointment",
+    "Summary": "Actualiza una cita y sus slots"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_14",
+    "RelativePath": "api/appointments/{id:int}/cancel",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Appointment.UpdateAppointmentResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Appointments"
+    ],
+    "EndpointName": "CancelAppointment",
+    "Summary": "Cancela una cita"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_6",
+    "RelativePath": "api/appointments/{id:int}/confirm",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Appointment.UpdateAppointmentResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Appointments"
+    ],
+    "EndpointName": "ConfirmAppointment",
+    "Summary": "Confirma una cita"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_12",
+    "RelativePath": "api/appointments/{id:int}/did-not-attend",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Appointment.UpdateAppointmentResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Appointments"
+    ],
+    "EndpointName": "DidNotAttendAppointment",
+    "Summary": "Marca cita como no asistida"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_10",
+    "RelativePath": "api/appointments/{id:int}/finish",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Appointment.UpdateAppointmentResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Appointments"
+    ],
+    "EndpointName": "FinishAppointment",
+    "Summary": "Finaliza una cita"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_8",
+    "RelativePath": "api/appointments/{id:int}/start",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.Appointment.UpdateAppointmentResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Appointments"
+    ],
+    "EndpointName": "StartAppointment",
+    "Summary": "Inicia una cita"
+  },
+  {
     "ContainingType": "Gestion.Citas.API.Endpoints.AuthEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAuthEndpoints\u003Eb__0_0",
     "RelativePath": "api/auth/login",
@@ -267,7 +649,7 @@
   },
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
-    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_6",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_8",
     "RelativePath": "api/doctors/{doctorId:int}/business-hours",
     "HttpMethod": "GET",
     "IsController": false,
@@ -335,7 +717,7 @@
   },
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
-    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_8",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_10",
     "RelativePath": "api/doctors/me",
     "HttpMethod": "GET",
     "IsController": false,
@@ -365,6 +747,70 @@
     ],
     "EndpointName": "GetCurrentDoctor",
     "Summary": "Obtiene la informaci\u00F3n del doctor autenticado"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.DoctorEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDoctorEndpoints\u003Eb__0_6",
+    "RelativePath": "api/doctors/me/appointments",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Gestion.Citas.Business.DTO.Response.Appointment.GetAppointmentResponse, Gestion.Citas.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Doctors"
+    ],
+    "EndpointName": "GetCurrentDoctorAppointments",
+    "Summary": "Obtiene las citas del doctor autenticado por fecha y estado"
   },
   {
     "ContainingType": "Gestion.Citas.API.Endpoints.PatientEndpoints\u002B\u003C\u003Ec",
