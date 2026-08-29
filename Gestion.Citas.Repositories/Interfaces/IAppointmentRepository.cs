@@ -31,6 +31,6 @@ namespace Gestion.Citas.Repositories.Interfaces
             string role,
             int userId
             );
-        Task<List<Appointment>> ListInRange(DateOnly date, TimeOnly startTime, TimeOnly endtime);
+        Task<List<Appointment>> ListInRange(DateOnly date, TimeOnly startTime, TimeOnly endtime, int doctorId);
     }
 }

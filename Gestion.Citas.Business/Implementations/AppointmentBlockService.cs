@@ -56,7 +56,7 @@ namespace Gestion.Citas.Business.Implementations
                 return Result.Failure<CreateAppointmentBlockResponse>("Ya existe un bloqueo que colisiona con el horario indicado");
 
             //validación de colisión de bloqueo con citas existentes
-            var appointments = await _appointmentRepository.ListInRange(request.Date, request.StartTime, request.EndTime);
+            var appointments = await _appointmentRepository.ListInRange(request.Date, request.StartTime, request.EndTime, request.DoctorId);
             if(appointments is null || appointments.Count <= 0)
             {
                 var result = await _appointmentBlockRepository.CreateAsync(request.Adapt<AppointmentBlock>());

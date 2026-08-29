@@ -184,11 +184,11 @@ namespace Gestion.Citas.Repositories.Implementations
 
         }
 
-        public async Task<List<Appointment>> ListInRange(DateOnly date, TimeOnly startTime, TimeOnly endtime)
+        public async Task<List<Appointment>> ListInRange(DateOnly date, TimeOnly startTime, TimeOnly endtime, int doctorId)
         {
             var result = await _context.Set<Appointment>()
                 .Where(a => 
-                    a.Date == date && a.StartTime < endtime && a.StartTime.AddMinutes(a.DurationMin) > startTime
+                    a.Date == date && a.DoctorId == doctorId && a.StartTime < endtime && a.StartTime.AddMinutes(a.DurationMin) > startTime
                     && (a.Status.Equals("REQUESTED") || a.Status.Equals("CONFIRMED")))
                 .ToListAsync();
             return result;
