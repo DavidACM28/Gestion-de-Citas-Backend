@@ -61,5 +61,6 @@ app.MapGroup("api/doctors").MapDoctorEndpoints().WithTags("Doctors");
 app.MapGroup("api/patients").MapPatientEndpoints().WithTags("Patients");
 app.MapGroup("api/businessHours").MapBusinessHoursEndpoints().WithTags("BusinessHours");
 app.MapGroup("api/appointments").MapAppointmentEndpoints().WithTags("Appointments");
+app.MapGroup("api/appointmentBlocks").MapAppointmentBlockEndpoints().WithTags("AppointmentBlocks");
 
 app.Run();

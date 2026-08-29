@@ -1,5 +1,135 @@
 [
   {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppoitnmentBlockEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentBlockEndpoints\u003Eb__0_0",
+    "RelativePath": "api/appointmentBlocks/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Gestion.Citas.Business.DTO.Request.AppointmentBlock.CreateAppointmentBlockRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Gestion.Citas.Business.DTO.Response.AppointmentBlock.CreateAppointmentBlockResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ],
+    "Tags": [
+      "AppointmentBlocks"
+    ],
+    "EndpointName": "CreateAppointmentBlock",
+    "Summary": "Crea una bloqueo de cita"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppoitnmentBlockEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentBlockEndpoints\u003Eb__0_2",
+    "RelativePath": "api/appointmentBlocks/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.Nullable\u00601[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Gestion.Citas.Business.DTO.Response.AppointmentBlock.GetAppointmentBlockResponse, Gestion.Citas.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "AppointmentBlocks"
+    ],
+    "EndpointName": "GetAppointmentBlocks",
+    "Summary": "Lista los bloqueos filtrados por doctor y fecha"
+  },
+  {
+    "ContainingType": "Gestion.Citas.API.Endpoints.AppoitnmentBlockEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAppointmentBlockEndpoints\u003Eb__0_4",
+    "RelativePath": "api/appointmentBlocks/{id:int}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "AppointmentBlocks"
+    ],
+    "EndpointName": "DeleteAppointmentBlock",
+    "Summary": "Desactiva un bloqueo por Id"
+  },
+  {
     "ContainingType": "Gestion.Citas.API.Endpoints.AppointmentEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAppointmentEndpoints\u003Eb__0_0",
     "RelativePath": "api/appointments/",
@@ -10,42 +140,42 @@
       {
         "Name": "doctorFirstName",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "doctorLastName",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "patientFirstName",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "patientLastName",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "specialtyName",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "status",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "pageNumber",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "pageSize",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "startDate",

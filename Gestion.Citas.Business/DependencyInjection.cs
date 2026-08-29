@@ -18,6 +18,7 @@ namespace Gestion.Citas.Business
             services.AddScoped<IPatientService, PatientService>();
             services.AddScoped<IBusinessHoursService, BusinessHoursService>();
             services.AddScoped<IAppointmentService, AppointmentService>();
+            services.AddScoped<IAppointmentBlockService, AppointmentBlockService>();
             return services;
         }
     }

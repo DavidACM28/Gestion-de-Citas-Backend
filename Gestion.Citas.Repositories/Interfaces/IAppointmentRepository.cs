@@ -2,6 +2,7 @@
 using Gestion.Citas.DataAccess.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Gestion.Citas.Repositories.Interfaces
@@ -30,5 +31,6 @@ namespace Gestion.Citas.Repositories.Interfaces
             string role,
             int userId
             );
+        Task<List<Appointment>> ListInRange(DateOnly date, TimeOnly startTime, TimeOnly endtime);
     }
 }
