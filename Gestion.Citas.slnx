@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/01. deploy/">
     <File Path="docker-compose.yml" />
+    <File Path="dockerfile" />
   </Folder>
   <Folder Name="/02. src/" />
   <Folder Name="/02. src/01. Presentation/">
