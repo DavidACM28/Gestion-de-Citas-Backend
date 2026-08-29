@@ -29,6 +29,7 @@ namespace Gestion.Citas.Repositories.Implementations
                 }
                 catch (Exception) 
                 {
+                    await trx.RollbackAsync();
                     return Result.Failure<AppointmentBlock>("No se pudo crear el bloqueo y cancelar las citas");
                 }
 

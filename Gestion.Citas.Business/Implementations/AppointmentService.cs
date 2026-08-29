@@ -1,7 +1,6 @@
 ﻿using Gestion.Citas.Business.Constants;
 using Gestion.Citas.Business.DTO.Request.Appointment;
 using Gestion.Citas.Business.DTO.Response.Appointment;
-using Gestion.Citas.Business.DTO.Response.Doctor;
 using Gestion.Citas.Business.Interfaces;
 using Gestion.Citas.Common.Helpers;
 using Gestion.Citas.DataAccess.Entities;
