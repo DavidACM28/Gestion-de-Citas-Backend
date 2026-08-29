@@ -11,3 +11,9 @@
       - 1501:1433
     volumes:
       - C:\Users\USUARIO\Documents\Docker\Volumenes\minimal_api:/var/opt/mssql/data
+  techstore-api:
+      build:
+        context: .
+        dockerfile: dockerfile
+      ports:
+        - "1600:8080"
